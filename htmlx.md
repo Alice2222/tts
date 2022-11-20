@@ -57,3 +57,17 @@ ___
   // 每两秒会发请求，当请求返回码是286就会停止轮询
   <div hx-get="/news" hx-trigger="every 2s"></div>
   ```
+- 请求返回展示的目标元素，hx-target属性
+- 请求返回展示的目标元素的属性（hx-swap），默认是interHtml，可设置的内容：
+  
+    |名称|描述|
+    |-|-------:|:------:|
+    |innerHTML|默认|
+    |outerHTML|替换整个元素内容|
+    |afterbegin|加在目标元素的第一个子元素的内容前面|
+    |beforebegin|加在目标元素的父元素的内容前面|
+    |beforeend|追加在目标元素的最后一个子元素的内容后面|
+    |afterend|追加在目标元素的父元素的内容后面|
+    |none|不加在目标元素|
+
+- 
