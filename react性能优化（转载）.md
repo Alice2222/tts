@@ -13,7 +13,7 @@ React 使得前端开发者不再跟 DOM 打交道，只需要控制组件及其
 ![这是图片](./assets/react-1.png)
 我们向下一层，看一下当更新发生时的具体过程。
 
-如下图所示，假设用户蓝色的结点中发生了一次 onClick，对应组件触发了相应 setState，React 就会重新开始构建整颗 UI Tree。因为构建都是从根节点发生的，所以会先调用*getRootForUpdateFiber*找到根节点，并触发*ScheduleUpdateOnFiber*进入*Scheduler*进行调度开始更新过程；更新主要分为两个阶段，*Render Phase*和*Commit Phase*，其中：
+如下图所示，假设用户蓝色的节点中发生了一次 onClick，对应组件触发了相应 setState，React 就会重新开始构建整颗 UI Tree。因为构建都是从根节点发生的，所以会先调用*getRootForUpdateFiber*找到根节点，并触发*ScheduleUpdateOnFiber*进入*Scheduler*进行调度开始更新过程；更新主要分为两个阶段，*Render Phase*和*Commit Phase*，其中：
 
 + Render 阶段就是根据每个组件中的状态构建出一个新的 UI Tree，也叫WorkInProgress Tree，并为每一个结点对应的操作打上 EffectTag，即更新、删除、新增。全部构建完成后就进入下一阶段。
 + Commit 阶段就是将构建好的 WIP Tree 反应到浏览器中，即 React 为我们自动进行相应的 dom 操作，保持 UI 一致性。

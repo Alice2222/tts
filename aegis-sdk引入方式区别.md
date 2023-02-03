@@ -21,6 +21,5 @@
 ![ARMS无法监控](./assets/arms%20sdk%20short.png)
 
 2. 字节前端监控，使用
-
-
+![字节前端监控](./assets/rangers%20site%20sdk.png)
 
